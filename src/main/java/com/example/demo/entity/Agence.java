@@ -44,10 +44,16 @@ public class Agence {
 	
 
 	
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
 	public long getIdAgence() {
 		return idAgence;
 	}
-	public void setIdAgence(long idAgence) {
+	public void setIdAgence(Long idAgence) {
 		this.idAgence = idAgence;
 	}
 	public String getNom_Agence() {
@@ -156,12 +162,11 @@ public class Agence {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Agence(long idAgence, String nom_Agence, String adr_One_Agence, String adr_Two_Agence,
-			String adr_Tree_Agence, String tel_Agence, String fax_Agence, String telex_Agence, String representant,
-			String domi_Agence, String type_Agence, String cpte_Agence, String etat_Agence, String site_Web,
-			String email, String nom_Comercial, String pays_Agence, String province_Agence) {
+	public Agence(String nom_Agence, String adr_One_Agence, String adr_Two_Agence, String adr_Tree_Agence,
+			String tel_Agence, String fax_Agence, String telex_Agence, String representant, String domi_Agence,
+			String type_Agence, String cpte_Agence, String etat_Agence, String site_Web, String email,
+			String nom_Comercial, String pays_Agence, String province_Agence, List<Reservation> reservations) {
 		super();
-		this.idAgence = idAgence;
 		this.nom_Agence = nom_Agence;
 		this.adr_One_Agence = adr_One_Agence;
 		this.adr_Two_Agence = adr_Two_Agence;
@@ -179,7 +184,9 @@ public class Agence {
 		this.nom_Comercial = nom_Comercial;
 		this.pays_Agence = pays_Agence;
 		this.province_Agence = province_Agence;
+		this.reservations = reservations;
 	}
+	
 
 
 

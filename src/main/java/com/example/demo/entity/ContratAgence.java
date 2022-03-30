@@ -25,7 +25,7 @@ public class ContratAgence {
 	private Date date_contrat;
 	private Long cpde_periode;
 	private String code_tarif;
-	private Long prix_arrangement;
+
 	private String code_reduction;	
 	private String code_supplement;
 	private Long prix_reduction;
@@ -57,12 +57,7 @@ public class ContratAgence {
 	public void setCode_tarif(String code_tarif) {
 		this.code_tarif = code_tarif;
 	}
-	public Long getPrix_arrangement() {
-		return prix_arrangement;
-	}
-	public void setPrix_arrangement(Long prix_arrangement) {
-		this.prix_arrangement = prix_arrangement;
-	}
+
 	public String getCode_reduction() {
 		return code_reduction;
 	}
@@ -94,14 +89,13 @@ public class ContratAgence {
 		this.valeur_supp = valeur_supp;
 	}
 	public ContratAgence(Long idContartAgence, Date date_contrat, Long cpde_periode, String code_tarif,
-			Long prix_arrangement, String code_reduction, String code_supplement, Long prix_reduction,
+			 String code_reduction, String code_supplement, Long prix_reduction,
 			Long prix_arragement, Long valeur_supp) {
 		super();
 		this.idContartAgence = idContartAgence;
 		this.date_contrat = date_contrat;
 		this.cpde_periode = cpde_periode;
 		this.code_tarif = code_tarif;
-		this.prix_arrangement = prix_arrangement;
 		this.code_reduction = code_reduction;
 		this.code_supplement = code_supplement;
 		this.prix_reduction = prix_reduction;
