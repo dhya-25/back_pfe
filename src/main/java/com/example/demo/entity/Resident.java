@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -62,6 +63,9 @@ public class Resident {
 	
 	@ManyToOne
 	private Consomation consomation;
+	
+
+	
 	public Resident() {
 		System.out.println("Le résident créer avec succée");
 	}

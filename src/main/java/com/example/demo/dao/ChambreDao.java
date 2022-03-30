@@ -1,5 +1,9 @@
 package com.example.demo.dao;
 
-public interface ChambreDao {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.entity.Chambre;
+
+public interface ChambreDao extends JpaRepository<Chambre,Long> {
 
 }

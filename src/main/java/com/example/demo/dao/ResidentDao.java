@@ -1,5 +1,9 @@
 package com.example.demo.dao;
 
-public interface ResidentDao {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.entity.Resident;
+
+public interface ResidentDao extends JpaRepository<Resident,Long>{
 
 }

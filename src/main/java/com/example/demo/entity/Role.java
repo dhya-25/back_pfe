@@ -1,9 +1,12 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -18,6 +21,9 @@ public class Role {
 	private String libelle;
 	
 	private Long droit_acces;
+	
+	@OneToMany(mappedBy = "role")
+	private List<Utilisateur> utilisateurs;
 
 	public String getId_role() {
 		return id_role;

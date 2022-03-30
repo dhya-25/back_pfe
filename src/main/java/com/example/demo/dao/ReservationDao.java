@@ -1,5 +1,9 @@
 package com.example.demo.dao;
 
-public interface ReservationDao {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.entity.Reservation;
+
+public interface ReservationDao extends JpaRepository<Reservation,Long> {
 
 }

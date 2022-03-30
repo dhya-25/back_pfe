@@ -1,5 +1,9 @@
 package com.example.demo.dao;
 
-public interface ContratAgenceDao {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.entity.ContratAgence;
+
+public interface ContratAgenceDao extends JpaRepository<ContratAgence,Long> {
 
 }

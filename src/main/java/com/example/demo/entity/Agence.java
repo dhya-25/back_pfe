@@ -19,7 +19,7 @@ public class Agence {
 	@GeneratedValue/*strategy = GenerationType.SEQUENCE, generator = "ROLE_ID_GENERATOR"*/
 //	@SequenceGenerator(name = "ROLE_ID_GENERATOR", sequenceName = "SEQ_AGENCE", allocationSize = 1)
 	
-	private long idAgence;
+	private Long idAgence;
 	
 	private String nom_Agence; 
 	private String adr_One_Agence;
