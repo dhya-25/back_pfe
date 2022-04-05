@@ -61,6 +61,7 @@ public class Hotel {
 	private List<RoomRack> roomrack;
 	
 
+	
 	public Hotel(String nom_hotel, String adr1_hotel, String adr2_hotel, String adr3_hotel, String tel_hotel,
 			String fax_hotel, String mat_fiscale, Long chambre_hotel, Long lit_hotel, Date deb_saison_hotel,
 			Date fin_saison_hotel, String status_hotel, String ccb1_hotel, String ccb2_hotel, String cpt_client_hotel,
@@ -99,6 +100,12 @@ public class Hotel {
 		this.reservation = reservation;
 		this.roomrack = roomrack;
 	}
+	
+	public Hotel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Reservation getReservation() {
 		return reservation;
 	}
@@ -111,10 +118,7 @@ public class Hotel {
 	public void setRoomrack(List<RoomRack> roomrack) {
 		this.roomrack = roomrack;
 	}
-	public Hotel() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 	public Long getIdHotel() {
 		return idHotel;
 	}

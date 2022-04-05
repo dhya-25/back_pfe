@@ -56,6 +56,22 @@ public class Utilisateur {
 		//this.residents = residents;
 	}
 
+	public String getCode_utilisateur() {
+		return code_utilisateur;
+	}
+
+	public void setCode_utilisateur(String code_utilisateur) {
+		this.code_utilisateur = code_utilisateur;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 	public String getNom_user() {
 		return nom_user;
 	}

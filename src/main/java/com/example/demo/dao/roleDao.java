@@ -16,7 +16,8 @@ public class roleDao {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 	
-	
+	@Autowired
+	RoleRepository repository;
 	public List<Role> findAll(){
 		
 		return mongoTemplate.findAll(Role.class);
@@ -27,5 +28,10 @@ public class roleDao {
 		
 	}
 	
+	public void delete(String id) {
+	
+		mongoTemplate.dropCollection(id);;
+	}
+
 
 }

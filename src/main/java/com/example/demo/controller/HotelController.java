@@ -18,6 +18,8 @@ import com.example.demo.dao.HotelDao;
 import com.example.demo.entity.ContratAgence;
 import com.example.demo.entity.Hotel;
 import com.example.demo.exception.ProductNotFoundException;
+import com.example.demo.model.hotelModel;
+import com.example.demo.services.hotelService;
 
 @RestController
 @CrossOrigin
@@ -26,26 +28,35 @@ public class HotelController {
 	
 	@Autowired
 	private HotelDao hotelDao;
+	
+	@Autowired
+	private hotelService hotelService;
+
 
 	@PostMapping("/add")
-
-	public ResponseEntity<Hotel> createHotel(@RequestBody Hotel hotel ) {
-		return ResponseEntity.ok(hotelDao.save(hotel));
-	}
+	public String createStudent(@RequestBody hotelModel studentModel){
+        return hotelService.createResource(studentModel);
+    }
+	
 
 	@CrossOrigin
 	@GetMapping("/get")
-	public ResponseEntity<List<Hotel>> getHotelList() {
-
-		return ResponseEntity.ok(hotelDao.findAll());
-	}
-	
+	public List<hotelModel> readResources(){
+        return hotelService.readResources();
+    }
 	@GetMapping("/getbyid/{id}")
 
-	public ResponseEntity<Hotel> findHotel(@PathVariable Long id) {
+	public ResponseEntity<List<hotelModel>> findHotell() {
 		return ResponseEntity.ok(
-				hotelDao.findById(id).orElseThrow(() -> new ProductNotFoundException("Contrat agence Not found")));
+				hotelService.readResourcesById());
 	}
+	
+	/*@CrossOrigin
+	@GetMapping("/getbyidd/{id}")
+	public List<hotelModel> readResourcesById(@PathVariable Long id){
+        return hotelService.readResourcesById(id);
+    }*/
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteHotel(@PathVariable Long id) {
 		hotelDao.deleteById(id);

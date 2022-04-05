@@ -21,7 +21,7 @@ import com.example.demo.exception.ProductNotFoundException;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/reservation")
+@RequestMapping("/typeChambre")
 public class TypeChambreController {
 	@Autowired
 	private TypeChambreDao typeChambreDao;

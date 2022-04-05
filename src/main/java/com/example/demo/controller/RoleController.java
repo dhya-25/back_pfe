@@ -42,5 +42,12 @@ public class RoleController {
 		
 		return ResponseEntity.ok(roledao.findAll());
 	}
+	
+	
+	@PostMapping("/deleteRole")
+	public void saveAdministrateur(@RequestBody String id) {
+			roledao.delete(id);
+		
+	}
 
 }
