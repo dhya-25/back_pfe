@@ -35,6 +35,20 @@ public class ChambreController {
 	}
 
 	@CrossOrigin
+	@GetMapping("/getByNomResa/{nomResa}")
+	public ResponseEntity<List<Chambre>> findChambreByNomResa(@PathVariable String nomResa) {
+
+		return ResponseEntity.ok(chambreDao.findChambreByNomResa(nomResa));
+	}
+	
+	@CrossOrigin
+	@GetMapping("/getByTypeChambre/{code_categ}")
+	public ResponseEntity<List<Chambre>> FindByIdTypeChambre(@PathVariable String code_categ) {
+
+		return ResponseEntity.ok(chambreDao.FindByIdTypeChambre(code_categ));
+	}
+	
+	@CrossOrigin
 	@GetMapping("/get")
 	public ResponseEntity<List<Chambre>> getChambreList() {
 

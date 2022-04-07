@@ -60,14 +60,14 @@ public class ContratAgenceController {
 		try {
 
 			Optional<ContratAgence> contratagence = contratAgenceDao.findById(contratAgence.getIdContartAgence());
-			contratagence.get().setCode_reduction(contratAgence.getCode_reduction());
-			contratagence.get().setCode_supplement(contratAgence.getCode_supplement());
-			contratagence.get().setCode_tarif(contratAgence.getCode_tarif());
-			contratagence.get().setCpde_periode(contratAgence.getCpde_periode());
-			contratagence.get().setDate_contrat(contratAgence.getDate_contrat());
-			contratagence.get().setPrix_arragement(contratAgence.getPrix_arragement());
-			contratagence.get().setPrix_reduction(contratAgence.getPrix_reduction());
-			contratagence.get().setValeur_supp(contratAgence.getValeur_supp());
+			contratagence.get().setCodeReduction(contratAgence.getCodeReduction());
+			contratagence.get().setCodeSupplement(contratAgence.getCodeSupplement());
+			contratagence.get().setCodeTarif(contratAgence.getCodeTarif());
+			contratagence.get().setCpdePeriode(contratAgence.getCpdePeriode());
+			contratagence.get().setDateContrat(contratAgence.getDateContrat());
+			contratagence.get().setPrixArragement(contratAgence.getPrixArragement());
+			contratagence.get().setPrixReduction(contratAgence.getPrixReduction());
+			contratagence.get().setValeurSupp(contratAgence.getValeurSupp());
 			
 		
 			ContratAgence ContraUpdated = contratAgenceDao.save(contratagence.get());

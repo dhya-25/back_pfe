@@ -15,34 +15,35 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Reservation {
-	
+
 	@Id
-	@GeneratedValue/*strategy = GenerationType.SEQUENCE, generator = "ROLE_ID_GENERATOR"*/
-	//@SequenceGenerator(name = "ROLE_ID_GENERATOR", sequenceName = "SEQ_CONTRATAGENCE", allocationSize = 1)
+	@GeneratedValue /* strategy = GenerationType.SEQUENCE, generator = "ROLE_ID_GENERATOR" */
+	// @SequenceGenerator(name = "ROLE_ID_GENERATOR", sequenceName =
+	// "SEQ_CONTRATAGENCE", allocationSize = 1)
 	private Long idReservation;
-	
+
 	@Temporal(TemporalType.DATE)
 	private Date date_res;
-	
+
 	private String commentaire;
 	@Temporal(TemporalType.DATE)
 	private Date date_arr;
 	@Temporal(TemporalType.DATE)
 	private Date date_dep;
-	
-	private String heure_arr ;
-	private String heure_dep ;
-	
-	private String aero_arr ;
-	private String aero_dep ;
-	
-	private String vol_arr ;
-	private String vol_dep ;
+
+	private String heure_arr;
+	private String heure_dep;
+
+	private String aero_arr;
+	private String aero_dep;
+
+	private String vol_arr;
+	private String vol_dep;
 	private Long remise_resa;
 	private String etat_resa;
 	private String type_resa;
 	private String chef_groupe;
-	
+
 	private Long cod_user_creation;
 	private Long cod_user_modification;
 	@Temporal(TemporalType.DATE)
@@ -50,33 +51,24 @@ public class Reservation {
 	@Temporal(TemporalType.DATE)
 	private Date date_modification;
 
-
 	@Temporal(TemporalType.DATE)
 	private Date date_resa_agence;
-	
+
 	private String groupe;
-	
+
 	@ManyToOne
 	private Agence agence;
-	
-	
+
 	@OneToMany(mappedBy = "reservation")
 	private List<Chambre> chambre;
-	
+
 	@OneToMany(mappedBy = "reservation")
 	private List<Hotel> hotel;
 
-
-	
 	public Reservation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	
-
-	
-
 
 	public Reservation(Date date_res, String commentaire, Date date_arr, Date date_dep, String heure_arr,
 			String heure_dep, String aero_arr, String aero_dep, String vol_arr, String vol_dep, Long remise_resa,
@@ -106,42 +98,24 @@ public class Reservation {
 		this.groupe = groupe;
 		this.chambre = chambre;
 		this.hotel = hotel;
-		//this.agence = agence;
+		// this.agence = agence;
 	}
-
-
-
-
-
 
 	public List<Hotel> getHotel() {
 		return hotel;
 	}
 
-
-
-
-
-
 	public void setHotel(List<Hotel> hotel) {
 		this.hotel = hotel;
 	}
-
-
-
-
 
 	public List<Chambre> getChambre() {
 		return chambre;
 	}
 
-
-
 	public void setChambre(List<Chambre> chambre) {
 		this.chambre = chambre;
 	}
-
-
 
 	public Long getIdReservation() {
 		return idReservation;
@@ -310,9 +284,5 @@ public class Reservation {
 	public void setGroupe(String groupe) {
 		this.groupe = groupe;
 	}
-	
-	
-
-
 
 }

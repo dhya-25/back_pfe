@@ -34,7 +34,7 @@ public class HotelController {
 
 
 	@PostMapping("/add")
-	public String createStudent(@RequestBody hotelModel studentModel){
+	public String createHotelUtilisateur(@RequestBody hotelModel studentModel){
         return hotelService.createResource(studentModel);
     }
 	

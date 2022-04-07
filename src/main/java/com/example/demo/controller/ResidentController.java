@@ -39,6 +39,13 @@ public class ResidentController {
 
 		return ResponseEntity.ok(residentDao.findAll());
 	}
+	
+	@CrossOrigin
+	@GetMapping("/getByChambre/{chambre}")
+	public ResponseEntity<List<Resident>> findByChambre(@PathVariable	String chambre) {
+
+		return ResponseEntity.ok(residentDao.findByChambre(chambre));
+	}
 	@GetMapping("/getbyid/{id}")
 
 	public ResponseEntity<Resident> findResident(@PathVariable Long id) {

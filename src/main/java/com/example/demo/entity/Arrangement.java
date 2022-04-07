@@ -7,106 +7,118 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Arrangement {
 	
 	@Id
-	@GeneratedValue
-	private String cod_arrangement;
-	private Long rang_arrangement;
-	private String lib_arrangement;
-	private String premier_service;
-	private String dernier_service;
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	private String codArrangement;
+	private Long rangArrangement;
+	private String libArrangement;
+	private String premierService;
+	private String dernierService;
 	private Long pdej;
 	private Long dej;
 	private Long din;
-	private Long all_inclusif;
+	private Long allInclusif;
 	
 	@OneToMany(mappedBy = "arrangement")
 	private List<Resident> resident;
-	
-	
-	public Arrangement(Long rang_arrangement, String lib_arrangement, String premier_service, String dernier_service,
-			Long pdej, Long dej, Long din, Long all_inclusif, List<Resident> resident) {
+
+	public Arrangement(Long rangArrangement, String libArrangement, String premierService, String dernierService,
+			Long pdej, Long dej, Long din, Long allInclusif, List<Resident> resident) {
 		super();
-		this.rang_arrangement = rang_arrangement;
-		this.lib_arrangement = lib_arrangement;
-		this.premier_service = premier_service;
-		this.dernier_service = dernier_service;
+		this.rangArrangement = rangArrangement;
+		this.libArrangement = libArrangement;
+		this.premierService = premierService;
+		this.dernierService = dernierService;
 		this.pdej = pdej;
 		this.dej = dej;
 		this.din = din;
-		this.all_inclusif = all_inclusif;
+		this.allInclusif = allInclusif;
 		this.resident = resident;
 	}
+
 	public Arrangement() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Long getRang_arrangement() {
-		return rang_arrangement;
+
+	public Long getRangArrangement() {
+		return rangArrangement;
 	}
-	public void setRang_arrangement(Long rang_arrangement) {
-		this.rang_arrangement = rang_arrangement;
+
+	public void setRangArrangement(Long rangArrangement) {
+		this.rangArrangement = rangArrangement;
 	}
-	public String getLib_arrangement() {
-		return lib_arrangement;
+
+	public String getLibArrangement() {
+		return libArrangement;
 	}
-	public void setLib_arrangement(String lib_arrangement) {
-		this.lib_arrangement = lib_arrangement;
+
+	public void setLibArrangement(String libArrangement) {
+		this.libArrangement = libArrangement;
 	}
-	public String getPremier_service() {
-		return premier_service;
+
+	public String getPremierService() {
+		return premierService;
 	}
-	public void setPremier_service(String premier_service) {
-		this.premier_service = premier_service;
+
+	public void setPremierService(String premierService) {
+		this.premierService = premierService;
 	}
-	public String getDernier_service() {
-		return dernier_service;
+
+	public String getDernierService() {
+		return dernierService;
 	}
-	public void setDernier_service(String dernier_service) {
-		this.dernier_service = dernier_service;
+
+	public void setDernierService(String dernierService) {
+		this.dernierService = dernierService;
 	}
+
 	public Long getPdej() {
 		return pdej;
 	}
+
 	public void setPdej(Long pdej) {
 		this.pdej = pdej;
 	}
+
 	public Long getDej() {
 		return dej;
 	}
+
 	public void setDej(Long dej) {
 		this.dej = dej;
 	}
+
 	public Long getDin() {
 		return din;
 	}
+
 	public void setDin(Long din) {
 		this.din = din;
 	}
-	public Long getAll_inclusif() {
-		return all_inclusif;
+
+	public Long getAllInclusif() {
+		return allInclusif;
 	}
-	public void setAll_inclusif(Long all_inclusif) {
-		this.all_inclusif = all_inclusif;
+
+	public void setAllInclusif(Long allInclusif) {
+		this.allInclusif = allInclusif;
 	}
-	public String getCod_arrangement() {
-		return cod_arrangement;
-	}
-	public void setCod_arrangement(String cod_arrangement) {
-		this.cod_arrangement = cod_arrangement;
-	}
+
 	public List<Resident> getResident() {
 		return resident;
 	}
+
 	public void setResident(List<Resident> resident) {
 		this.resident = resident;
 	}
-
-
-
-
+	
 	
 	
 	

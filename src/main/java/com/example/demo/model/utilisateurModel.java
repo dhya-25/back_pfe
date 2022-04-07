@@ -16,11 +16,16 @@ public class utilisateurModel {
 	private String adresse;
 	private String tel;
 	private String cin;
+	private String ref;
 	@Temporal(TemporalType.DATE)
 	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date date_deb;
+	
+	
+	
+	
 	public utilisateurModel(String nom_user, String password, String mat_pers, Long duree_acc, String adresse,
-			String tel, String cin, Date date_deb) {
+			String tel, String cin, String refHotel, Date date_deb) {
 		super();
 		this.nom_user = nom_user;
 		this.password = password;
@@ -29,14 +34,27 @@ public class utilisateurModel {
 		this.adresse = adresse;
 		this.tel = tel;
 		this.cin = cin;
+		this.ref = refHotel;
 		this.date_deb = date_deb;
 	}
-	
-	
-	
+
+
+
 	public utilisateurModel() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public String getRef() {
+		return ref;
+	}
+
+
+
+	public void setRef(String refHotel) {
+		this.ref = refHotel;
 	}
 
 

@@ -21,178 +21,210 @@ public class Agence {
 	
 	private Long idAgence;
 	
-	private String nom_Agence; 
-	private String adr_One_Agence;
-	private String adr_Two_Agence;
-	private String adr_Tree_Agence;
-	private String tel_Agence;
-	private String fax_Agence;
-	private String telex_Agence;
+	private String nomAgence; 
+	private String adrOne_Agence;
+	private String adrTwo_Agence;
+	private String adrTree_Agence;
+	private String telAgence;
+	private String faxAgence;
+	private String telexAgence;
 	private String representant;
-	private String domi_Agence;
-	private String type_Agence;
-	private String cpte_Agence;
-	private String etat_Agence;
-	private String site_Web;
+	private String domiAgence;
+	private String typeAgence;
+	private String cpteAgence;
+	private String etatAgence;
+	private String siteWeb;
 	private String email;
-	private String nom_Comercial;
-	private String pays_Agence;
-	private String province_Agence;
+	private String nomComercial;
+	private String paysAgence;
+	private String provinceAgence;
 	
 	@OneToMany(mappedBy = "agence")
 	private List<Reservation> reservations;
-	
 
-	
-	public List<Reservation> getReservations() {
-		return reservations;
-	}
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
-	}
-	public long getIdAgence() {
-		return idAgence;
-	}
-	public void setIdAgence(Long idAgence) {
-		this.idAgence = idAgence;
-	}
-	public String getNom_Agence() {
-		return nom_Agence;
-	}
-	public void setNom_Agence(String nom_Agence) {
-		this.nom_Agence = nom_Agence;
-	}
-	public String getAdr_One_Agence() {
-		return adr_One_Agence;
-	}
-	public void setAdr_One_Agence(String adr_One_Agence) {
-		this.adr_One_Agence = adr_One_Agence;
-	}
-	public String getAdr_Two_Agence() {
-		return adr_Two_Agence;
-	}
-	public void setAdr_Two_Agence(String adr_Two_Agence) {
-		this.adr_Two_Agence = adr_Two_Agence;
-	}
-	public String getAdr_Tree_Agence() {
-		return adr_Tree_Agence;
-	}
-	public void setAdr_Tree_Agence(String adr_Tree_Agence) {
-		this.adr_Tree_Agence = adr_Tree_Agence;
-	}
-	public String getTel_Agence() {
-		return tel_Agence;
-	}
-	public void setTel_Agence(String tel_Agence) {
-		this.tel_Agence = tel_Agence;
-	}
-	public String getFax_Agence() {
-		return fax_Agence;
-	}
-	public void setFax_Agence(String fax_Agence) {
-		this.fax_Agence = fax_Agence;
-	}
-	public String getTelex_Agence() {
-		return telex_Agence;
-	}
-	public void setTelex_Agence(String telex_Agence) {
-		this.telex_Agence = telex_Agence;
-	}
-	public String getRepresentant() {
-		return representant;
-	}
-	public void setRepresentant(String representant) {
-		this.representant = representant;
-	}
-	public String getDomi_Agence() {
-		return domi_Agence;
-	}
-	public void setDomi_Agence(String domi_Agence) {
-		this.domi_Agence = domi_Agence;
-	}
-	public String getType_Agence() {
-		return type_Agence;
-	}
-	public void setType_Agence(String type_Agence) {
-		this.type_Agence = type_Agence;
-	}
-	public String getCpte_Agence() {
-		return cpte_Agence;
-	}
-	public void setCpte_Agence(String cpte_Agence) {
-		this.cpte_Agence = cpte_Agence;
-	}
-	public String getEtat_Agence() {
-		return etat_Agence;
-	}
-	public void setEtat_Agence(String etat_Agence) {
-		this.etat_Agence = etat_Agence;
-	}
-	public String getSite_Web() {
-		return site_Web;
-	}
-	public void setSite_Web(String site_Web) {
-		this.site_Web = site_Web;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getNom_Comercial() {
-		return nom_Comercial;
-	}
-	public void setNom_Comercial(String nom_Comercial) {
-		this.nom_Comercial = nom_Comercial;
-	}
-	public String getPays_Agence() {
-		return pays_Agence;
-	}
-	public void setPays_Agence(String pays_Agence) {
-		this.pays_Agence = pays_Agence;
-	}
-	public String getProvince_Agence() {
-		return province_Agence;
-	}
-	public void setProvince_Agence(String province_Agence) {
-		this.province_Agence = province_Agence;
-	}
 	public Agence() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Agence(String nom_Agence, String adr_One_Agence, String adr_Two_Agence, String adr_Tree_Agence,
-			String tel_Agence, String fax_Agence, String telex_Agence, String representant, String domi_Agence,
-			String type_Agence, String cpte_Agence, String etat_Agence, String site_Web, String email,
-			String nom_Comercial, String pays_Agence, String province_Agence, List<Reservation> reservations) {
+
+	public Agence(String nomAgence, String adrOne_Agence, String adrTwo_Agence, String adrTree_Agence, String telAgence,
+			String faxAgence, String telexAgence, String representant, String domiAgence, String typeAgence,
+			String cpteAgence, String etatAgence, String siteWeb, String email, String nomComercial, String paysAgence,
+			String provinceAgence, List<Reservation> reservations) {
 		super();
-		this.nom_Agence = nom_Agence;
-		this.adr_One_Agence = adr_One_Agence;
-		this.adr_Two_Agence = adr_Two_Agence;
-		this.adr_Tree_Agence = adr_Tree_Agence;
-		this.tel_Agence = tel_Agence;
-		this.fax_Agence = fax_Agence;
-		this.telex_Agence = telex_Agence;
+		this.nomAgence = nomAgence;
+		this.adrOne_Agence = adrOne_Agence;
+		this.adrTwo_Agence = adrTwo_Agence;
+		this.adrTree_Agence = adrTree_Agence;
+		this.telAgence = telAgence;
+		this.faxAgence = faxAgence;
+		this.telexAgence = telexAgence;
 		this.representant = representant;
-		this.domi_Agence = domi_Agence;
-		this.type_Agence = type_Agence;
-		this.cpte_Agence = cpte_Agence;
-		this.etat_Agence = etat_Agence;
-		this.site_Web = site_Web;
+		this.domiAgence = domiAgence;
+		this.typeAgence = typeAgence;
+		this.cpteAgence = cpteAgence;
+		this.etatAgence = etatAgence;
+		this.siteWeb = siteWeb;
 		this.email = email;
-		this.nom_Comercial = nom_Comercial;
-		this.pays_Agence = pays_Agence;
-		this.province_Agence = province_Agence;
+		this.nomComercial = nomComercial;
+		this.paysAgence = paysAgence;
+		this.provinceAgence = provinceAgence;
+		this.reservations = reservations;
+	}
+
+	public Long getIdAgence() {
+		return idAgence;
+	}
+
+	public void setIdAgence(Long idAgence) {
+		this.idAgence = idAgence;
+	}
+
+	public String getNomAgence() {
+		return nomAgence;
+	}
+
+	public void setNomAgence(String nomAgence) {
+		this.nomAgence = nomAgence;
+	}
+
+	public String getAdrOne_Agence() {
+		return adrOne_Agence;
+	}
+
+	public void setAdrOne_Agence(String adrOne_Agence) {
+		this.adrOne_Agence = adrOne_Agence;
+	}
+
+	public String getAdrTwo_Agence() {
+		return adrTwo_Agence;
+	}
+
+	public void setAdrTwo_Agence(String adrTwo_Agence) {
+		this.adrTwo_Agence = adrTwo_Agence;
+	}
+
+	public String getAdrTree_Agence() {
+		return adrTree_Agence;
+	}
+
+	public void setAdrTree_Agence(String adrTree_Agence) {
+		this.adrTree_Agence = adrTree_Agence;
+	}
+
+	public String getTelAgence() {
+		return telAgence;
+	}
+
+	public void setTelAgence(String telAgence) {
+		this.telAgence = telAgence;
+	}
+
+	public String getFaxAgence() {
+		return faxAgence;
+	}
+
+	public void setFaxAgence(String faxAgence) {
+		this.faxAgence = faxAgence;
+	}
+
+	public String getTelexAgence() {
+		return telexAgence;
+	}
+
+	public void setTelexAgence(String telexAgence) {
+		this.telexAgence = telexAgence;
+	}
+
+	public String getRepresentant() {
+		return representant;
+	}
+
+	public void setRepresentant(String representant) {
+		this.representant = representant;
+	}
+
+	public String getDomiAgence() {
+		return domiAgence;
+	}
+
+	public void setDomiAgence(String domiAgence) {
+		this.domiAgence = domiAgence;
+	}
+
+	public String getTypeAgence() {
+		return typeAgence;
+	}
+
+	public void setTypeAgence(String typeAgence) {
+		this.typeAgence = typeAgence;
+	}
+
+	public String getCpteAgence() {
+		return cpteAgence;
+	}
+
+	public void setCpteAgence(String cpteAgence) {
+		this.cpteAgence = cpteAgence;
+	}
+
+	public String getEtatAgence() {
+		return etatAgence;
+	}
+
+	public void setEtatAgence(String etatAgence) {
+		this.etatAgence = etatAgence;
+	}
+
+	public String getSiteWeb() {
+		return siteWeb;
+	}
+
+	public void setSiteWeb(String siteWeb) {
+		this.siteWeb = siteWeb;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNomComercial() {
+		return nomComercial;
+	}
+
+	public void setNomComercial(String nomComercial) {
+		this.nomComercial = nomComercial;
+	}
+
+	public String getPaysAgence() {
+		return paysAgence;
+	}
+
+	public void setPaysAgence(String paysAgence) {
+		this.paysAgence = paysAgence;
+	}
+
+	public String getProvinceAgence() {
+		return provinceAgence;
+	}
+
+	public void setProvinceAgence(String provinceAgence) {
+		this.provinceAgence = provinceAgence;
+	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
 	
-
-
-
-
-
-
-
 	
+	
+
 	}

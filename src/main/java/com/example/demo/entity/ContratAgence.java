@@ -16,99 +16,93 @@ import javax.persistence.TemporalType;
 @Entity
 public class ContratAgence {
 	@Id
-	@GeneratedValue/*strategy = GenerationType.SEQUENCE, generator = "ROLE_ID_GENERATOR"*/
-	//@SequenceGenerator(name = "ROLE_ID_GENERATOR", sequenceName = "SEQ_CONTRATAGENCE", allocationSize = 1)
-	
+	@GeneratedValue /* strategy = GenerationType.SEQUENCE, generator = "ROLE_ID_GENERATOR" */
+	// @SequenceGenerator(name = "ROLE_ID_GENERATOR", sequenceName =
+	// "SEQ_CONTRATAGENCE", allocationSize = 1)
+
 	private Long idContartAgence;
-	
+
 	@Temporal(TemporalType.DATE)
-	private Date date_contrat;
-	private Long cpde_periode;
-	private String code_tarif;
+	private Date dateContrat;
+	private Long cpdePeriode;
+	private String codeTarif;
 
-	private String code_reduction;	
-	private String code_supplement;
-	private Long prix_reduction;
-	private Long prix_arragement;
-	private Long valeur_supp;
-
-	
+	private String codeReduction;
+	private String codeSupplement;
+	private Long prixReduction;
+	private Long prixArragement;
+	private Long valeurSupp;
+	public ContratAgence() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public ContratAgence(Date dateContrat, Long cpdePeriode, String codeTarif, String codeReduction,
+			String codeSupplement, Long prixReduction, Long prixArragement, Long valeurSupp) {
+		super();
+		this.dateContrat = dateContrat;
+		this.cpdePeriode = cpdePeriode;
+		this.codeTarif = codeTarif;
+		this.codeReduction = codeReduction;
+		this.codeSupplement = codeSupplement;
+		this.prixReduction = prixReduction;
+		this.prixArragement = prixArragement;
+		this.valeurSupp = valeurSupp;
+	}
 	public Long getIdContartAgence() {
 		return idContartAgence;
 	}
 	public void setIdContartAgence(Long idContartAgence) {
 		this.idContartAgence = idContartAgence;
 	}
-	public Date getDate_contrat() {
-		return date_contrat;
+	public Date getDateContrat() {
+		return dateContrat;
 	}
-	public void setDate_contrat(Date date_contrat) {
-		this.date_contrat = date_contrat;
+	public void setDateContrat(Date dateContrat) {
+		this.dateContrat = dateContrat;
 	}
-	public Long getCpde_periode() {
-		return cpde_periode;
+	public Long getCpdePeriode() {
+		return cpdePeriode;
 	}
-	public void setCpde_periode(Long cpde_periode) {
-		this.cpde_periode = cpde_periode;
+	public void setCpdePeriode(Long cpdePeriode) {
+		this.cpdePeriode = cpdePeriode;
 	}
-	public String getCode_tarif() {
-		return code_tarif;
+	public String getCodeTarif() {
+		return codeTarif;
 	}
-	public void setCode_tarif(String code_tarif) {
-		this.code_tarif = code_tarif;
+	public void setCodeTarif(String codeTarif) {
+		this.codeTarif = codeTarif;
+	}
+	public String getCodeReduction() {
+		return codeReduction;
+	}
+	public void setCodeReduction(String codeReduction) {
+		this.codeReduction = codeReduction;
+	}
+	public String getCodeSupplement() {
+		return codeSupplement;
+	}
+	public void setCodeSupplement(String codeSupplement) {
+		this.codeSupplement = codeSupplement;
+	}
+	public Long getPrixReduction() {
+		return prixReduction;
+	}
+	public void setPrixReduction(Long prixReduction) {
+		this.prixReduction = prixReduction;
+	}
+	public Long getPrixArragement() {
+		return prixArragement;
+	}
+	public void setPrixArragement(Long prixArragement) {
+		this.prixArragement = prixArragement;
+	}
+	public Long getValeurSupp() {
+		return valeurSupp;
+	}
+	public void setValeurSupp(Long valeurSupp) {
+		this.valeurSupp = valeurSupp;
 	}
 
-	public String getCode_reduction() {
-		return code_reduction;
-	}
-	public void setCode_reduction(String code_reduction) {
-		this.code_reduction = code_reduction;
-	}
-	public String getCode_supplement() {
-		return code_supplement;
-	}
-	public void setCode_supplement(String code_supplement) {
-		this.code_supplement = code_supplement;
-	}
-	public Long getPrix_reduction() {
-		return prix_reduction;
-	}
-	public void setPrix_reduction(Long prix_reduction) {
-		this.prix_reduction = prix_reduction;
-	}
-	public Long getPrix_arragement() {
-		return prix_arragement;
-	}
-	public void setPrix_arragement(Long prix_arragement) {
-		this.prix_arragement = prix_arragement;
-	}
-	public Long getValeur_supp() {
-		return valeur_supp;
-	}
-	public void setValeur_supp(Long valeur_supp) {
-		this.valeur_supp = valeur_supp;
-	}
-	public ContratAgence(Long idContartAgence, Date date_contrat, Long cpde_periode, String code_tarif,
-			 String code_reduction, String code_supplement, Long prix_reduction,
-			Long prix_arragement, Long valeur_supp) {
-		super();
-		this.idContartAgence = idContartAgence;
-		this.date_contrat = date_contrat;
-		this.cpde_periode = cpde_periode;
-		this.code_tarif = code_tarif;
-		this.code_reduction = code_reduction;
-		this.code_supplement = code_supplement;
-		this.prix_reduction = prix_reduction;
-		this.prix_arragement = prix_arragement;
-		this.valeur_supp = valeur_supp;
-	}
-	public ContratAgence() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
-	
-
-;
 
 }

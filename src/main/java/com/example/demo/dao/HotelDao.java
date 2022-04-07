@@ -16,5 +16,7 @@ public interface HotelDao extends JpaRepository<Hotel,Long>{
 	 @Query(value ="select * from hotel p where p.id_hotel=:id_hotel",nativeQuery = true)
 	 public List<Hotel> findByIdd( Long id_hotel );
 
+	 public boolean existsByEmail(String email);
+
 
 }

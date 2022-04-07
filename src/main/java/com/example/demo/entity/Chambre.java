@@ -37,28 +37,28 @@ public class Chambre {
 	@Temporal(TemporalType.DATE)
 	private Date dateDep;
 	private String num_chambre ;
-	private String code_vip ;
-	private String etat_res ;
-	private Long nbr_adult_a;
-	private Long nbr_enfant_a;
-	private Long nbr_bebe_a;
+	private String codeVip ;
+	private String etatRes ;
+	private Long nbrAdult_a;
+	private Long nbrEnfant_a;
+	private Long nbrBebe_a;
 	private String commentaire ;
-	private String heure_arr ;
-	private String heure_dep ;
+	private String heureArr ;
+	private String heureDep ;
 	private Long remise ; 
 	private String motif ; 
-	private Long prix_unitaire ; 
-	private Long num_facture ; 
+	private Long prixUnitaire ; 
+	private Long numFacture ; 
 	@Temporal(TemporalType.DATE)
-	private Date date_facture ; 
+	private Date dateFacture ; 
 	private String offre ;
-	private Long mnt_remise ;
-	private String type_remise ;
-	private String lib_remise ;
+	private Long mntRemise ;
+	private String typeRemise ;
+	private String libRemise ;
 	@Temporal(TemporalType.DATE)
-	private Date date_remise ; 
-	private Long user_remise ;
-	private String type_prix ;
+	private Date dateRemise ; 
+	private Long userRemise ;
+	private String typePrix ;
 	
 	private long tot_adult;
 	private long tot_enfant ;
@@ -77,202 +77,318 @@ public class Chambre {
 	
 	@ManyToOne
 	private TypeChambre typeChambre;
-	
-	public long getIdChambre() {
+
+	public Chambre() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Chambre(Long codeResaChambre, Long codReas, Long nbrAdulte, String nomResa, String arrangAdult,
+			String arrangBebe, Long nbrbebe, Date dateArr, Date dateDep, String num_chambre, String codeVip,
+			String etatRes, Long nbrAdult_a, Long nbrEnfant_a, Long nbrBebe_a, String commentaire, String heureArr,
+			String heureDep, Long remise, String motif, Long prixUnitaire, Long numFacture, Date dateFacture,
+			String offre, Long mntRemise, String typeRemise, String libRemise, Date dateRemise, Long userRemise,
+			String typePrix, long tot_adult, long tot_enfant, List<Resident> residents, Reservation reservation,
+			Facture facture, TypeChambre typeChambre) {
+		super();
+		this.codeResaChambre = codeResaChambre;
+		this.codReas = codReas;
+		this.nbrAdulte = nbrAdulte;
+		this.nomResa = nomResa;
+		this.arrangAdult = arrangAdult;
+		this.arrangBebe = arrangBebe;
+		this.nbrbebe = nbrbebe;
+		this.dateArr = dateArr;
+		this.dateDep = dateDep;
+		this.num_chambre = num_chambre;
+		this.codeVip = codeVip;
+		this.etatRes = etatRes;
+		this.nbrAdult_a = nbrAdult_a;
+		this.nbrEnfant_a = nbrEnfant_a;
+		this.nbrBebe_a = nbrBebe_a;
+		this.commentaire = commentaire;
+		this.heureArr = heureArr;
+		this.heureDep = heureDep;
+		this.remise = remise;
+		this.motif = motif;
+		this.prixUnitaire = prixUnitaire;
+		this.numFacture = numFacture;
+		this.dateFacture = dateFacture;
+		this.offre = offre;
+		this.mntRemise = mntRemise;
+		this.typeRemise = typeRemise;
+		this.libRemise = libRemise;
+		this.dateRemise = dateRemise;
+		this.userRemise = userRemise;
+		this.typePrix = typePrix;
+		this.tot_adult = tot_adult;
+		this.tot_enfant = tot_enfant;
+		this.residents = residents;
+		this.reservation = reservation;
+		this.facture = facture;
+		this.typeChambre = typeChambre;
+	}
+
+	public Long getIdChambre() {
 		return idChambre;
 	}
-	public void setIdChambre(long idChambre) {
+
+	public void setIdChambre(Long idChambre) {
 		this.idChambre = idChambre;
 	}
-	public long getCodeResaChambre() {
+
+	public Long getCodeResaChambre() {
 		return codeResaChambre;
 	}
-	public void setCodeResaChambre(long codeResaChambre) {
+
+	public void setCodeResaChambre(Long codeResaChambre) {
 		this.codeResaChambre = codeResaChambre;
 	}
-	public long getCodReas() {
+
+	public Long getCodReas() {
 		return codReas;
 	}
-	public void setCodReas(long codReas) {
+
+	public void setCodReas(Long codReas) {
 		this.codReas = codReas;
 	}
-	public long getNbrAdulte() {
+
+	public Long getNbrAdulte() {
 		return nbrAdulte;
 	}
-	public void setNbrAdulte(long nbrAdulte) {
+
+	public void setNbrAdulte(Long nbrAdulte) {
 		this.nbrAdulte = nbrAdulte;
 	}
+
 	public String getNomResa() {
 		return nomResa;
 	}
+
 	public void setNomResa(String nomResa) {
 		this.nomResa = nomResa;
 	}
+
 	public String getArrangAdult() {
 		return arrangAdult;
 	}
+
 	public void setArrangAdult(String arrangAdult) {
 		this.arrangAdult = arrangAdult;
 	}
+
 	public String getArrangBebe() {
 		return arrangBebe;
 	}
+
 	public void setArrangBebe(String arrangBebe) {
 		this.arrangBebe = arrangBebe;
 	}
-	public long getNbrbebe() {
+
+	public Long getNbrbebe() {
 		return nbrbebe;
 	}
-	public void setNbrbebe(long nbrbebe) {
+
+	public void setNbrbebe(Long nbrbebe) {
 		this.nbrbebe = nbrbebe;
 	}
+
 	public Date getDateArr() {
 		return dateArr;
 	}
+
 	public void setDateArr(Date dateArr) {
 		this.dateArr = dateArr;
 	}
+
 	public Date getDateDep() {
 		return dateDep;
 	}
+
 	public void setDateDep(Date dateDep) {
 		this.dateDep = dateDep;
 	}
+
 	public String getNum_chambre() {
 		return num_chambre;
 	}
+
 	public void setNum_chambre(String num_chambre) {
 		this.num_chambre = num_chambre;
 	}
-	public String getCode_vip() {
-		return code_vip;
+
+	public String getCodeVip() {
+		return codeVip;
 	}
-	public void setCode_vip(String code_vip) {
-		this.code_vip = code_vip;
+
+	public void setCodeVip(String codeVip) {
+		this.codeVip = codeVip;
 	}
-	public String getEtat_res() {
-		return etat_res;
+
+	public String getEtatRes() {
+		return etatRes;
 	}
-	public void setEtat_res(String etat_res) {
-		this.etat_res = etat_res;
+
+	public void setEtatRes(String etatRes) {
+		this.etatRes = etatRes;
 	}
-	public Long getNbr_adult_a() {
-		return nbr_adult_a;
+
+	public Long getNbrAdult_a() {
+		return nbrAdult_a;
 	}
-	public void setNbr_adult_a(Long nbr_adult_a) {
-		this.nbr_adult_a = nbr_adult_a;
+
+	public void setNbrAdult_a(Long nbrAdult_a) {
+		this.nbrAdult_a = nbrAdult_a;
 	}
-	public Long getNbr_enfant_a() {
-		return nbr_enfant_a;
+
+	public Long getNbrEnfant_a() {
+		return nbrEnfant_a;
 	}
-	public void setNbr_enfant_a(Long nbr_enfant_a) {
-		this.nbr_enfant_a = nbr_enfant_a;
+
+	public void setNbrEnfant_a(Long nbrEnfant_a) {
+		this.nbrEnfant_a = nbrEnfant_a;
 	}
-	public Long getNbr_bebe_a() {
-		return nbr_bebe_a;
+
+	public Long getNbrBebe_a() {
+		return nbrBebe_a;
 	}
-	public void setNbr_bebe_a(Long nbr_bebe_a) {
-		this.nbr_bebe_a = nbr_bebe_a;
+
+	public void setNbrBebe_a(Long nbrBebe_a) {
+		this.nbrBebe_a = nbrBebe_a;
 	}
+
 	public String getCommentaire() {
 		return commentaire;
 	}
+
 	public void setCommentaire(String commentaire) {
 		this.commentaire = commentaire;
 	}
-	public String getHeure_arr() {
-		return heure_arr;
+
+	public String getHeureArr() {
+		return heureArr;
 	}
-	public void setHeure_arr(String heure_arr) {
-		this.heure_arr = heure_arr;
+
+	public void setHeureArr(String heureArr) {
+		this.heureArr = heureArr;
 	}
-	public String getHeure_dep() {
-		return heure_dep;
+
+	public String getHeureDep() {
+		return heureDep;
 	}
-	public void setHeure_dep(String heure_dep) {
-		this.heure_dep = heure_dep;
+
+	public void setHeureDep(String heureDep) {
+		this.heureDep = heureDep;
 	}
+
 	public Long getRemise() {
 		return remise;
 	}
+
 	public void setRemise(Long remise) {
 		this.remise = remise;
 	}
+
 	public String getMotif() {
 		return motif;
 	}
+
 	public void setMotif(String motif) {
 		this.motif = motif;
 	}
-	public Long getPrix_unitaire() {
-		return prix_unitaire;
+
+	public Long getPrixUnitaire() {
+		return prixUnitaire;
 	}
-	public void setPrix_unitaire(Long prix_unitaire) {
-		this.prix_unitaire = prix_unitaire;
+
+	public void setPrixUnitaire(Long prixUnitaire) {
+		this.prixUnitaire = prixUnitaire;
 	}
-	public Long getNum_facture() {
-		return num_facture;
+
+	public Long getNumFacture() {
+		return numFacture;
 	}
-	public void setNum_facture(Long num_facture) {
-		this.num_facture = num_facture;
+
+	public void setNumFacture(Long numFacture) {
+		this.numFacture = numFacture;
 	}
-	public Date getDate_facture() {
-		return date_facture;
+
+	public Date getDateFacture() {
+		return dateFacture;
 	}
-	public void setDate_facture(Date date_facture) {
-		this.date_facture = date_facture;
+
+	public void setDateFacture(Date dateFacture) {
+		this.dateFacture = dateFacture;
 	}
+
 	public String getOffre() {
 		return offre;
 	}
+
 	public void setOffre(String offre) {
 		this.offre = offre;
 	}
-	public long getMnt_remise() {
-		return mnt_remise;
+
+	public Long getMntRemise() {
+		return mntRemise;
 	}
-	public void setMnt_remise(long mnt_remise) {
-		this.mnt_remise = mnt_remise;
+
+	public void setMntRemise(Long mntRemise) {
+		this.mntRemise = mntRemise;
 	}
-	public String getType_remise() {
-		return type_remise;
+
+	public String getTypeRemise() {
+		return typeRemise;
 	}
-	public void setType_remise(String type_remise) {
-		this.type_remise = type_remise;
+
+	public void setTypeRemise(String typeRemise) {
+		this.typeRemise = typeRemise;
 	}
-	public String getLib_remise() {
-		return lib_remise;
+
+	public String getLibRemise() {
+		return libRemise;
 	}
-	public void setLib_remise(String lib_remise) {
-		this.lib_remise = lib_remise;
+
+	public void setLibRemise(String libRemise) {
+		this.libRemise = libRemise;
 	}
-	public Date getDate_remise() {
-		return date_remise;
+
+	public Date getDateRemise() {
+		return dateRemise;
 	}
-	public void setDate_remise(Date date_remise) {
-		this.date_remise = date_remise;
+
+	public void setDateRemise(Date dateRemise) {
+		this.dateRemise = dateRemise;
 	}
-	public long getUser_remise() {
-		return user_remise;
+
+	public Long getUserRemise() {
+		return userRemise;
 	}
-	public void setUser_remise(long user_remise) {
-		this.user_remise = user_remise;
+
+	public void setUserRemise(Long userRemise) {
+		this.userRemise = userRemise;
 	}
-	public String getType_prix() {
-		return type_prix;
+
+	public String getTypePrix() {
+		return typePrix;
 	}
-	public void setType_prix(String type_prix) {
-		this.type_prix = type_prix;
+
+	public void setTypePrix(String typePrix) {
+		this.typePrix = typePrix;
 	}
+
 	public long getTot_adult() {
 		return tot_adult;
 	}
+
 	public void setTot_adult(long tot_adult) {
 		this.tot_adult = tot_adult;
 	}
+
 	public long getTot_enfant() {
 		return tot_enfant;
 	}
+
 	public void setTot_enfant(long tot_enfant) {
 		this.tot_enfant = tot_enfant;
 	}
@@ -280,93 +396,34 @@ public class Chambre {
 	public List<Resident> getResidents() {
 		return residents;
 	}
+
 	public void setResidents(List<Resident> residents) {
 		this.residents = residents;
 	}
-	
+
 	public Reservation getReservation() {
 		return reservation;
 	}
+
 	public void setReservation(Reservation reservation) {
 		this.reservation = reservation;
 	}
+
 	public Facture getFacture() {
 		return facture;
 	}
+
 	public void setFacture(Facture facture) {
 		this.facture = facture;
 	}
-	public void setIdChambre(Long idChambre) {
-		this.idChambre = idChambre;
+
+	public TypeChambre getTypeChambre() {
+		return typeChambre;
 	}
-	public void setCodeResaChambre(Long codeResaChambre) {
-		this.codeResaChambre = codeResaChambre;
+
+	public void setTypeChambre(TypeChambre typeChambre) {
+		this.typeChambre = typeChambre;
 	}
-	public void setCodReas(Long codReas) {
-		this.codReas = codReas;
-	}
-	public void setNbrAdulte(Long nbrAdulte) {
-		this.nbrAdulte = nbrAdulte;
-	}
-	public void setNbrbebe(Long nbrbebe) {
-		this.nbrbebe = nbrbebe;
-	}
-	public void setMnt_remise(Long mnt_remise) {
-		this.mnt_remise = mnt_remise;
-	}
-	public void setUser_remise(Long user_remise) {
-		this.user_remise = user_remise;
-	}
-	public Chambre(Long codeResaChambre, Long codReas, Long nbrAdulte, String nomResa, String arrangAdult,
-			String arrangBebe, Long nbrbebe, Date dateArr, Date dateDep, String num_chambre, String code_vip,
-			String etat_res, Long nbr_adult_a, Long nbr_enfant_a, Long nbr_bebe_a, String commentaire, String heure_arr,
-			String heure_dep, Long remise, String motif, Long prix_unitaire, Long num_facture, Date date_facture,
-			String offre, Long mnt_remise, String type_remise, String lib_remise, Date date_remise, Long user_remise,
-			String type_prix, long tot_adult, long tot_enfant, List<Resident> residents, TypeChambre typechambre,
-			Reservation reservation, Facture facture) {
-		super();
-		this.codeResaChambre = codeResaChambre;
-		this.codReas = codReas;
-		this.nbrAdulte = nbrAdulte;
-		this.nomResa = nomResa;
-		this.arrangAdult = arrangAdult;
-		this.arrangBebe = arrangBebe;
-		this.nbrbebe = nbrbebe;
-		this.dateArr = dateArr;
-		this.dateDep = dateDep;
-		this.num_chambre = num_chambre;
-		this.code_vip = code_vip;
-		this.etat_res = etat_res;
-		this.nbr_adult_a = nbr_adult_a;
-		this.nbr_enfant_a = nbr_enfant_a;
-		this.nbr_bebe_a = nbr_bebe_a;
-		this.commentaire = commentaire;
-		this.heure_arr = heure_arr;
-		this.heure_dep = heure_dep;
-		this.remise = remise;
-		this.motif = motif;
-		this.prix_unitaire = prix_unitaire;
-		this.num_facture = num_facture;
-		this.date_facture = date_facture;
-		this.offre = offre;
-		this.mnt_remise = mnt_remise;
-		this.type_remise = type_remise;
-		this.lib_remise = lib_remise;
-		this.date_remise = date_remise;
-		this.user_remise = user_remise;
-		this.type_prix = type_prix;
-		this.tot_adult = tot_adult;
-		this.tot_enfant = tot_enfant;
-		this.residents = residents;
-		//this.typechambre = typechambre;
-		this.reservation = reservation;
-		this.facture = facture;
-	}
-	public Chambre() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
 	
 	
 	

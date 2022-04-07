@@ -60,17 +60,14 @@ public class Resident {
 
 	@ManyToOne
 	private Arrangement arrangement;
-	
+
 	@ManyToOne
 	private Consomation consomation;
-	
 
-	
 	public Resident() {
 		System.out.println("Le résident créer avec succée");
 	}
 
-	
 	public Resident(Long cod_nat, String nom_resid, String adr_res, Date dat_naissance, String num_pass,
 			String num_voucher, String profession, String sexe, String num_cin, Date date_livr, String dern_serv,
 			Date date_arr, Date date_dep, Long plafond_cred, String adr2_res, String num_chambre, String nature,
@@ -112,7 +109,6 @@ public class Resident {
 		this.arrangement = arrangement;
 		this.consomation = consomation;
 	}
-
 
 	public Long getCod_resid() {
 		return cod_resid;
@@ -362,36 +358,28 @@ public class Resident {
 		this.date_remise = date_remise;
 	}
 
-
 	public Chambre getChambre() {
 		return chambre;
 	}
-
 
 	public void setChambre(Chambre chambre) {
 		this.chambre = chambre;
 	}
 
-
 	public Arrangement getArrangement() {
 		return arrangement;
 	}
-
 
 	public void setArrangement(Arrangement arrangement) {
 		this.arrangement = arrangement;
 	}
 
-
 	public Consomation getConsomation() {
 		return consomation;
 	}
 
-
 	public void setConsomation(Consomation consomation) {
 		this.consomation = consomation;
 	}
-
-	
 
 }

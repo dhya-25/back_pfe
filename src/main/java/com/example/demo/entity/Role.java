@@ -16,21 +16,33 @@ public class Role {
 	
 	@Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
-	private String id_role;
+	private String idRole;
 	
 	private String libelle;
 	
-	private Long droit_acces;
+	private Long droitAcces;
 	
 	@OneToMany(mappedBy = "role")
 	private List<Utilisateur> utilisateurs;
 
-	public String getId_role() {
-		return id_role;
+	public Role() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setId_role(String id_role) {
-		this.id_role = id_role;
+	public Role(String libelle, Long droitAcces, List<Utilisateur> utilisateurs) {
+		super();
+		this.libelle = libelle;
+		this.droitAcces = droitAcces;
+		this.utilisateurs = utilisateurs;
+	}
+
+	public String getIdRole() {
+		return idRole;
+	}
+
+	public void setIdRole(String idRole) {
+		this.idRole = idRole;
 	}
 
 	public String getLibelle() {
@@ -41,33 +53,28 @@ public class Role {
 		this.libelle = libelle;
 	}
 
-	public Long getDroit_acces() {
-		return droit_acces;
+	public Long getDroitAcces() {
+		return droitAcces;
 	}
 
-	public void setDroit_acces(Long droit_acces) {
-		this.droit_acces = droit_acces;
-	}
-	
-	
-
-	public Role(String id_role, String libelle, Long droit_acces) {
-		super();
-		this.id_role = id_role;
-		this.libelle = libelle;
-		this.droit_acces = droit_acces;
+	public void setDroitAcces(Long droitAcces) {
+		this.droitAcces = droitAcces;
 	}
 
-	public Role() {
-		super();
-		// TODO Auto-generated constructor stub
+	public List<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+
+	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
 	}
 
 	@Override
 	public String toString() {
-		return "Role [id_role=" + id_role + ", libelle=" + libelle + ", droit_acces=" + droit_acces + "]";
+		return "Role [idRole=" + idRole + ", libelle=" + libelle + ", droitAcces=" + droitAcces + ", utilisateurs="
+				+ utilisateurs + "]";
 	}
-	
+
 	
 	
 	

@@ -31,6 +31,7 @@ public class Hotel {
 	private Long lit_hotel;
 	
 	
+	
 
 	@Temporal(TemporalType.DATE)
 	private Date deb_saison_hotel;

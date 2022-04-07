@@ -24,7 +24,7 @@ public class Administrateur {
 	
 	private Long id;
 
-	private String use_matricule;
+	private String useMatricule;
 
 	private String adminLogin;
 	
@@ -50,7 +50,7 @@ public class Administrateur {
 			String adminPassword, Long nbEssai, Date crtdt, Date lastConx, String cpteStatus) {
 		super();
 		this.id = id;
-		this.use_matricule = use_matricule;
+		this.useMatricule = use_matricule;
 		this.adminLogin = adminLogin;
 		this.adminLname = adminLname;
 		this.adminFname = adminFname;
@@ -75,11 +75,11 @@ public class Administrateur {
 	}
 
 	public String getUse_matricule() {
-		return use_matricule;
+		return useMatricule;
 	}
 
 	public void setUse_matricule(String use_matricule) {
-		this.use_matricule = use_matricule;
+		this.useMatricule = use_matricule;
 	}
 
 	public String getAdminLogin() {
@@ -148,7 +148,7 @@ public class Administrateur {
 
 	@Override
 	public String toString() {
-		return "Administrateur [id=" + id + ", use_matricule=" + use_matricule + ", adminLogin=" + adminLogin
+		return "Administrateur [id=" + id + ", use_matricule=" + useMatricule + ", adminLogin=" + adminLogin
 				+ ", adminLname=" + adminLname + ", adminFname=" + adminFname + ", adminPassword=" + adminPassword
 				+ ", nbEssai=" + nbEssai + ", crtdt=" + crtdt + ", lastConx=" + lastConx + ", cpteStatus=" + cpteStatus
 				+ "]";

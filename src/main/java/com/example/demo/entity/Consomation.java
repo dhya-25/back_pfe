@@ -24,24 +24,24 @@ public class Consomation {
 	
 	private Long idConsommation;
 	
-	private Long mnt_Conso;
+	private Long mntConso;
 	@Temporal(TemporalType.DATE)
-	private Date date_Conso;
+	private Date dateConso;
 	
-	private String heure_conso;
+	private String heureConso;
 	
-	private String num_bon;
-	private String type_conso;
+	private String numBon;
+	private String typeConso;
 	@Temporal(TemporalType.DATE)
-	private Date date_sys;
+	private Date dateSys;
 	
 	private String offre;
-	private String type_client;
-	private Long num_fact_ind;
-	private Long num_fact_deb;
+	private String typeClient;
+	private Long numFactInd;
+	private Long numFactDeb;
 	private String forfait;
-	private String code_dev;
-	private Long taux_dev;
+	private String codeDev;
+	private Long tauxDev;
 	private Long unite;
 	
 	@OneToMany(mappedBy = "consomation")
@@ -52,134 +52,179 @@ public class Consomation {
 	
 	@ManyToOne
 	private Prestation prestation;
-	
-	public Consomation( Long mnt_Conso, Date date_Conso, String heure_conso, String num_bon,
-			String type_conso, Date date_sys, String offre, String type_client, Long num_fact_ind, Long num_fact_deb,
-			String forfait, String code_dev, Long taux_dev, Long unite, List<Resident> residents) {
-		super();
-		this.mnt_Conso = mnt_Conso;
-		this.date_Conso = date_Conso;
-		this.heure_conso = heure_conso;
-		this.num_bon = num_bon;
-		this.type_conso = type_conso;
-		this.date_sys = date_sys;
-		this.offre = offre;
-		this.type_client = type_client;
-		this.num_fact_ind = num_fact_ind;
-		this.num_fact_deb = num_fact_deb;
-		this.forfait = forfait;
-		this.code_dev = code_dev;
-		this.taux_dev = taux_dev;
-		this.unite = unite;
-		this.residents = residents;
-	}
+
 	public Consomation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public List<Resident> getResidents() {
-		return residents;
-	}
-	public void setResidents(List<Resident> residents) {
+
+	public Consomation(Long mntConso, Date dateConso, String heureConso, String numBon, String typeConso, Date dateSys,
+			String offre, String typeClient, Long numFactInd, Long numFactDeb, String forfait, String codeDev,
+			Long tauxDev, Long unite, List<Resident> residents, Facture facture, Prestation prestation) {
+		super();
+		this.mntConso = mntConso;
+		this.dateConso = dateConso;
+		this.heureConso = heureConso;
+		this.numBon = numBon;
+		this.typeConso = typeConso;
+		this.dateSys = dateSys;
+		this.offre = offre;
+		this.typeClient = typeClient;
+		this.numFactInd = numFactInd;
+		this.numFactDeb = numFactDeb;
+		this.forfait = forfait;
+		this.codeDev = codeDev;
+		this.tauxDev = tauxDev;
+		this.unite = unite;
 		this.residents = residents;
+		this.facture = facture;
+		this.prestation = prestation;
 	}
+
 	public Long getIdConsommation() {
 		return idConsommation;
 	}
+
 	public void setIdConsommation(Long idConsommation) {
 		this.idConsommation = idConsommation;
 	}
-	public Long getMnt_Conso() {
-		return mnt_Conso;
+
+	public Long getMntConso() {
+		return mntConso;
 	}
-	public void setMnt_Conso(Long mnt_Conso) {
-		this.mnt_Conso = mnt_Conso;
+
+	public void setMntConso(Long mntConso) {
+		this.mntConso = mntConso;
 	}
-	public Date getDate_Conso() {
-		return date_Conso;
+
+	public Date getDateConso() {
+		return dateConso;
 	}
-	public void setDate_Conso(Date date_Conso) {
-		this.date_Conso = date_Conso;
+
+	public void setDateConso(Date dateConso) {
+		this.dateConso = dateConso;
 	}
-	public String getHeure_conso() {
-		return heure_conso;
+
+	public String getHeureConso() {
+		return heureConso;
 	}
-	public void setHeure_conso(String heure_conso) {
-		this.heure_conso = heure_conso;
+
+	public void setHeureConso(String heureConso) {
+		this.heureConso = heureConso;
 	}
-	public String getNum_bon() {
-		return num_bon;
+
+	public String getNumBon() {
+		return numBon;
 	}
-	public void setNum_bon(String num_bon) {
-		this.num_bon = num_bon;
+
+	public void setNumBon(String numBon) {
+		this.numBon = numBon;
 	}
-	public String getType_conso() {
-		return type_conso;
+
+	public String getTypeConso() {
+		return typeConso;
 	}
-	public void setType_conso(String type_conso) {
-		this.type_conso = type_conso;
+
+	public void setTypeConso(String typeConso) {
+		this.typeConso = typeConso;
 	}
-	public Date getDate_sys() {
-		return date_sys;
+
+	public Date getDateSys() {
+		return dateSys;
 	}
-	public void setDate_sys(Date date_sys) {
-		this.date_sys = date_sys;
+
+	public void setDateSys(Date dateSys) {
+		this.dateSys = dateSys;
 	}
+
 	public String getOffre() {
 		return offre;
 	}
+
 	public void setOffre(String offre) {
 		this.offre = offre;
 	}
-	public String getType_client() {
-		return type_client;
+
+	public String getTypeClient() {
+		return typeClient;
 	}
-	public void setType_client(String type_client) {
-		this.type_client = type_client;
+
+	public void setTypeClient(String typeClient) {
+		this.typeClient = typeClient;
 	}
-	public Long getNum_fact_ind() {
-		return num_fact_ind;
+
+	public Long getNumFactInd() {
+		return numFactInd;
 	}
-	public void setNum_fact_ind(Long num_fact_ind) {
-		this.num_fact_ind = num_fact_ind;
+
+	public void setNumFactInd(Long numFactInd) {
+		this.numFactInd = numFactInd;
 	}
-	public Long getNum_fact_deb() {
-		return num_fact_deb;
+
+	public Long getNumFactDeb() {
+		return numFactDeb;
 	}
-	public void setNum_fact_deb(Long num_fact_deb) {
-		this.num_fact_deb = num_fact_deb;
+
+	public void setNumFactDeb(Long numFactDeb) {
+		this.numFactDeb = numFactDeb;
 	}
+
 	public String getForfait() {
 		return forfait;
 	}
+
 	public void setForfait(String forfait) {
 		this.forfait = forfait;
 	}
-	public String getCode_dev() {
-		return code_dev;
+
+	public String getCodeDev() {
+		return codeDev;
 	}
-	public void setCode_dev(String code_dev) {
-		this.code_dev = code_dev;
+
+	public void setCodeDev(String codeDev) {
+		this.codeDev = codeDev;
 	}
-	public Long getTaux_dev() {
-		return taux_dev;
+
+	public Long getTauxDev() {
+		return tauxDev;
 	}
-	public void setTaux_dev(Long taux_dev) {
-		this.taux_dev = taux_dev;
+
+	public void setTauxDev(Long tauxDev) {
+		this.tauxDev = tauxDev;
 	}
+
 	public Long getUnite() {
 		return unite;
 	}
+
 	public void setUnite(Long unite) {
 		this.unite = unite;
 	}
-	
-	
 
-	
+	public List<Resident> getResidents() {
+		return residents;
+	}
 
+	public void setResidents(List<Resident> residents) {
+		this.residents = residents;
+	}
+
+	public Facture getFacture() {
+		return facture;
+	}
+
+	public void setFacture(Facture facture) {
+		this.facture = facture;
+	}
+
+	public Prestation getPrestation() {
+		return prestation;
+	}
+
+	public void setPrestation(Prestation prestation) {
+		this.prestation = prestation;
+	}
+	
 
 	
 }

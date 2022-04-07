@@ -22,23 +22,23 @@ public class Facture {
 
 	private Long idFacture;
 	@Temporal(TemporalType.DATE)
-	private Date date_arr;
+	private Date dateArr;
 	@Temporal(TemporalType.DATE)
-	private Date date_dep;
+	private Date dateDep;
 	private String commentaire;
-	private Long mnt_htax;
-	private Long mnt_htva;
-	private Long mnt_fdcst;
-	private Long tbre_fiscal;
-	private Long mnt_ttc;
-	private String mnt_ttlettre;
+	private Long mntHtax;
+	private Long mntHtva;
+	private Long mntFdcst;
+	private Long tbreFiscal;
+	private Long mntTtc;
+	private String mntTtlettre;
 	private String promotion;
-	private Long nbr_gratuit;
-	private String type_paiment;
+	private Long nbrGratuit;
+	private String typePaiment;
 	@Temporal(TemporalType.DATE)
-	private Date date_facture;
-	private String nom_client;
-	private String type_facture;
+	private Date dateFacture;
+	private String nomClient;
+	private String typeFacture;
 
 	@OneToMany(mappedBy = "facture")
 	private List<Chambre> chambre;
@@ -46,41 +46,34 @@ public class Facture {
 	@OneToMany(mappedBy = "facture")
 	private List<Consomation> consomation;
 
-	
-	public Facture(Date date_arr, Date date_dep, String commentaire, Long mnt_htax, Long mnt_htva, Long mnt_fdcst,
-			Long tbre_fiscal, Long mnt_ttc, String mnt_ttlettre, String promotion, Long nbr_gratuit,
-			String type_paiment, Date date_facture, String nom_client, String type_facture, List<Chambre> chambre,
+	public Facture() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Facture(Date dateArr, Date dateDep, String commentaire, Long mntHtax, Long mntHtva, Long mntFdcst,
+			Long tbreFiscal, Long mntTtc, String mntTtlettre, String promotion, Long nbrGratuit, String typePaiment,
+			Date dateFacture, String nomClient, String typeFacture, List<Chambre> chambre,
 			List<Consomation> consomation) {
 		super();
-		this.date_arr = date_arr;
-		this.date_dep = date_dep;
+		this.dateArr = dateArr;
+		this.dateDep = dateDep;
 		this.commentaire = commentaire;
-		this.mnt_htax = mnt_htax;
-		this.mnt_htva = mnt_htva;
-		this.mnt_fdcst = mnt_fdcst;
-		this.tbre_fiscal = tbre_fiscal;
-		this.mnt_ttc = mnt_ttc;
-		this.mnt_ttlettre = mnt_ttlettre;
+		this.mntHtax = mntHtax;
+		this.mntHtva = mntHtva;
+		this.mntFdcst = mntFdcst;
+		this.tbreFiscal = tbreFiscal;
+		this.mntTtc = mntTtc;
+		this.mntTtlettre = mntTtlettre;
 		this.promotion = promotion;
-		this.nbr_gratuit = nbr_gratuit;
-		this.type_paiment = type_paiment;
-		this.date_facture = date_facture;
-		this.nom_client = nom_client;
-		this.type_facture = type_facture;
+		this.nbrGratuit = nbrGratuit;
+		this.typePaiment = typePaiment;
+		this.dateFacture = dateFacture;
+		this.nomClient = nomClient;
+		this.typeFacture = typeFacture;
 		this.chambre = chambre;
 		this.consomation = consomation;
 	}
-	
-
-	public List<Consomation> getConsomation() {
-		return consomation;
-	}
-
-
-	public void setConsomation(List<Consomation> consomation) {
-		this.consomation = consomation;
-	}
-
 
 	public Long getIdFacture() {
 		return idFacture;
@@ -90,20 +83,20 @@ public class Facture {
 		this.idFacture = idFacture;
 	}
 
-	public Date getDate_arr() {
-		return date_arr;
+	public Date getDateArr() {
+		return dateArr;
 	}
 
-	public void setDate_arr(Date date_arr) {
-		this.date_arr = date_arr;
+	public void setDateArr(Date dateArr) {
+		this.dateArr = dateArr;
 	}
 
-	public Date getDate_dep() {
-		return date_dep;
+	public Date getDateDep() {
+		return dateDep;
 	}
 
-	public void setDate_dep(Date date_dep) {
-		this.date_dep = date_dep;
+	public void setDateDep(Date dateDep) {
+		this.dateDep = dateDep;
 	}
 
 	public String getCommentaire() {
@@ -114,52 +107,52 @@ public class Facture {
 		this.commentaire = commentaire;
 	}
 
-	public Long getMnt_htax() {
-		return mnt_htax;
+	public Long getMntHtax() {
+		return mntHtax;
 	}
 
-	public void setMnt_htax(Long mnt_htax) {
-		this.mnt_htax = mnt_htax;
+	public void setMntHtax(Long mntHtax) {
+		this.mntHtax = mntHtax;
 	}
 
-	public Long getMnt_htva() {
-		return mnt_htva;
+	public Long getMntHtva() {
+		return mntHtva;
 	}
 
-	public void setMnt_htva(Long mnt_htva) {
-		this.mnt_htva = mnt_htva;
+	public void setMntHtva(Long mntHtva) {
+		this.mntHtva = mntHtva;
 	}
 
-	public Long getMnt_fdcst() {
-		return mnt_fdcst;
+	public Long getMntFdcst() {
+		return mntFdcst;
 	}
 
-	public void setMnt_fdcst(Long mnt_fdcst) {
-		this.mnt_fdcst = mnt_fdcst;
+	public void setMntFdcst(Long mntFdcst) {
+		this.mntFdcst = mntFdcst;
 	}
 
-	public Long getTbre_fiscal() {
-		return tbre_fiscal;
+	public Long getTbreFiscal() {
+		return tbreFiscal;
 	}
 
-	public void setTbre_fiscal(Long tbre_fiscal) {
-		this.tbre_fiscal = tbre_fiscal;
+	public void setTbreFiscal(Long tbreFiscal) {
+		this.tbreFiscal = tbreFiscal;
 	}
 
-	public Long getMnt_ttc() {
-		return mnt_ttc;
+	public Long getMntTtc() {
+		return mntTtc;
 	}
 
-	public void setMnt_ttc(Long mnt_ttc) {
-		this.mnt_ttc = mnt_ttc;
+	public void setMntTtc(Long mntTtc) {
+		this.mntTtc = mntTtc;
 	}
 
-	public String getMnt_ttlettre() {
-		return mnt_ttlettre;
+	public String getMntTtlettre() {
+		return mntTtlettre;
 	}
 
-	public void setMnt_ttlettre(String mnt_ttlettre) {
-		this.mnt_ttlettre = mnt_ttlettre;
+	public void setMntTtlettre(String mntTtlettre) {
+		this.mntTtlettre = mntTtlettre;
 	}
 
 	public String getPromotion() {
@@ -170,44 +163,44 @@ public class Facture {
 		this.promotion = promotion;
 	}
 
-	public Long getNbr_gratuit() {
-		return nbr_gratuit;
+	public Long getNbrGratuit() {
+		return nbrGratuit;
 	}
 
-	public void setNbr_gratuit(Long nbr_gratuit) {
-		this.nbr_gratuit = nbr_gratuit;
+	public void setNbrGratuit(Long nbrGratuit) {
+		this.nbrGratuit = nbrGratuit;
 	}
 
-	public String getType_paiment() {
-		return type_paiment;
+	public String getTypePaiment() {
+		return typePaiment;
 	}
 
-	public void setType_paiment(String type_paiment) {
-		this.type_paiment = type_paiment;
+	public void setTypePaiment(String typePaiment) {
+		this.typePaiment = typePaiment;
 	}
 
-	public Date getDate_facture() {
-		return date_facture;
+	public Date getDateFacture() {
+		return dateFacture;
 	}
 
-	public void setDate_facture(Date date_facture) {
-		this.date_facture = date_facture;
+	public void setDateFacture(Date dateFacture) {
+		this.dateFacture = dateFacture;
 	}
 
-	public String getNom_client() {
-		return nom_client;
+	public String getNomClient() {
+		return nomClient;
 	}
 
-	public void setNom_client(String nom_client) {
-		this.nom_client = nom_client;
+	public void setNomClient(String nomClient) {
+		this.nomClient = nomClient;
 	}
 
-	public String getType_facture() {
-		return type_facture;
+	public String getTypeFacture() {
+		return typeFacture;
 	}
 
-	public void setType_facture(String type_facture) {
-		this.type_facture = type_facture;
+	public void setTypeFacture(String typeFacture) {
+		this.typeFacture = typeFacture;
 	}
 
 	public List<Chambre> getChambre() {
@@ -217,5 +210,16 @@ public class Facture {
 	public void setChambre(List<Chambre> chambre) {
 		this.chambre = chambre;
 	}
+
+	public List<Consomation> getConsomation() {
+		return consomation;
+	}
+
+	public void setConsomation(List<Consomation> consomation) {
+		this.consomation = consomation;
+	}
+
+	
+	
 
 }

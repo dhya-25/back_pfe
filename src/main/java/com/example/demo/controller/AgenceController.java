@@ -65,18 +65,18 @@ public class AgenceController {
 		try {
 
 			Optional<Agence> Agence = agenceDao.findById(agence.getIdAgence());
-			Agence.get().setAdr_One_Agence(agence.getAdr_One_Agence());
-			Agence.get().setAdr_Two_Agence(agence.getAdr_Two_Agence());
-			Agence.get().setAdr_Tree_Agence(agence.getAdr_Tree_Agence());
-			Agence.get().setCpte_Agence(agence.getCpte_Agence());
-			Agence.get().setEtat_Agence(agence.getEtat_Agence());
-			Agence.get().setDomi_Agence(agence.getDomi_Agence());
+			Agence.get().setAdrOne_Agence(agence.getAdrOne_Agence());
+			Agence.get().setAdrTwo_Agence(agence.getAdrTwo_Agence());
+			Agence.get().setAdrTree_Agence(agence.getAdrTree_Agence());
+			Agence.get().setCpteAgence(agence.getCpteAgence());
+			Agence.get().setEtatAgence(agence.getEtatAgence());
+			Agence.get().setDomiAgence(agence.getDomiAgence());
 			Agence.get().setEmail(agence.getEmail());
-			Agence.get().setFax_Agence(agence.getFax_Agence());
-			Agence.get().setNom_Agence(agence.getNom_Agence());
-			Agence.get().setNom_Comercial(agence.getNom_Comercial());
-			Agence.get().setPays_Agence(agence.getPays_Agence());
-			Agence.get().setProvince_Agence(agence.getProvince_Agence());
+			Agence.get().setFaxAgence(agence.getFaxAgence());
+			Agence.get().setNomAgence(agence.getNomAgence());
+			Agence.get().setNomComercial(agence.getNomComercial());
+			Agence.get().setPaysAgence(agence.getPaysAgence());
+			Agence.get().setProvinceAgence(agence.getProvinceAgence());
 			Agence.get().setRepresentant(agence.getRepresentant());
 		
 			Agence AdminUpdated = agenceDao.save(Agence.get());

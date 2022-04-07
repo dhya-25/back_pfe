@@ -22,18 +22,19 @@ public class Utilisateur {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String code_utilisateur;
-	private String nom_user;
+	private String codeUtilisateur;
+	private String nomUser;
 	private String password;
-	private String mat_pers;
-	private Long duree_acc;
+	private String matPers;
+	private Long dureeAcc;
 	private String adresse;
 	private String tel;
 	private String cin;
 	@Temporal(TemporalType.DATE)
 	@JsonFormat(pattern = "dd-MM-yyyy")
-	private Date date_deb;
-	
+	private Date dateDeb;
+	private String ref;
+
 	@ManyToOne
 	private Role role;
 	
@@ -42,107 +43,140 @@ public class Utilisateur {
 
 	}
 
-	public Utilisateur(String nom_user, String password, String mat_pers, Long duree_acc, String adresse, String tel,
-			String cin, Date date_deb, List<Resident> residents) {
+
+	public Utilisateur(String nomUser, String password, String matPers, Long dureeAcc, String adresse, String tel,
+			String cin, Date dateDeb, String ref, Role role) {
 		super();
-		this.nom_user = nom_user;
+		this.nomUser = nomUser;
 		this.password = password;
-		this.mat_pers = mat_pers;
-		this.duree_acc = duree_acc;
+		this.matPers = matPers;
+		this.dureeAcc = dureeAcc;
 		this.adresse = adresse;
 		this.tel = tel;
 		this.cin = cin;
-		this.date_deb = date_deb;
-		//this.residents = residents;
-	}
-
-	public String getCode_utilisateur() {
-		return code_utilisateur;
-	}
-
-	public void setCode_utilisateur(String code_utilisateur) {
-		this.code_utilisateur = code_utilisateur;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
+		this.dateDeb = dateDeb;
+		this.ref = ref;
 		this.role = role;
 	}
 
-	public String getNom_user() {
-		return nom_user;
+
+	public String getCodeUtilisateur() {
+		return codeUtilisateur;
 	}
 
-	public void setNom_user(String nom_user) {
-		this.nom_user = nom_user;
+
+	public void setCodeUtilisateur(String codeUtilisateur) {
+		this.codeUtilisateur = codeUtilisateur;
 	}
+
+
+	public String getNomUser() {
+		return nomUser;
+	}
+
+
+	public void setNomUser(String nomUser) {
+		this.nomUser = nomUser;
+	}
+
 
 	public String getPassword() {
 		return password;
 	}
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public String getMat_pers() {
-		return mat_pers;
+
+	public String getMatPers() {
+		return matPers;
 	}
 
-	public void setMat_pers(String mat_pers) {
-		this.mat_pers = mat_pers;
+
+	public void setMatPers(String matPers) {
+		this.matPers = matPers;
 	}
 
-	public Long getDuree_acc() {
-		return duree_acc;
+
+	public Long getDureeAcc() {
+		return dureeAcc;
 	}
 
-	public void setDuree_acc(Long duree_acc) {
-		this.duree_acc = duree_acc;
+
+	public void setDureeAcc(Long dureeAcc) {
+		this.dureeAcc = dureeAcc;
 	}
+
 
 	public String getAdresse() {
 		return adresse;
 	}
 
+
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+
 
 	public String getTel() {
 		return tel;
 	}
 
+
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
 
 	public String getCin() {
 		return cin;
 	}
 
+
 	public void setCin(String cin) {
 		this.cin = cin;
 	}
 
-	public Date getDate_deb() {
-		return date_deb;
+
+	public Date getDateDeb() {
+		return dateDeb;
 	}
 
-	public void setDate_deb(Date date_deb) {
-		this.date_deb = date_deb;
+
+	public void setDateDeb(Date dateDeb) {
+		this.dateDeb = dateDeb;
 	}
 
-	
+
+	public String getRef() {
+		return ref;
+	}
+
+
+	public void setRef(String ref) {
+		this.ref = ref;
+	}
+
+
+	public Role getRole() {
+		return role;
+	}
+
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Utilisateur [code_utilisateur=" + code_utilisateur + ", nom_user=" + nom_user + ", password=" + password
-				+ ", mat_pers=" + mat_pers + ", duree_acc=" + duree_acc + ", adresse=" + adresse + ", tel=" + tel
-				+ ", cin=" + cin + ", date_deb=" + date_deb + "]";
+		return "Utilisateur [codeUtilisateur=" + codeUtilisateur + ", nomUser=" + nomUser + ", password=" + password
+				+ ", matPers=" + matPers + ", dureeAcc=" + dureeAcc + ", adresse=" + adresse + ", tel=" + tel + ", cin="
+				+ cin + ", dateDeb=" + dateDeb + ", ref=" + ref + ", role=" + role + "]";
 	}
+
+	
 
 }
